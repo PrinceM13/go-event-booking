@@ -1,0 +1,9 @@
+POST http://localhost:8080/events
+Content-Type: application/json
+
+{
+  "name": "Live Concert",
+  "description": "An amazing live concert featuring top artists.",
+  "location": "23 Main St, Springfield",
+  "dateTime": "2023-10-17T20:00:00Z"
+}
