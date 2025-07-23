@@ -40,7 +40,7 @@ func getEvent(c *gin.Context) {
 func createEvent(c *gin.Context) {
 	var event models.Event
 	if err := c.ShouldBindJSON(&event); err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		c.JSON(http.StatusBadRequest, gin.H{"message": "Invalid input", "error": err.Error()})
 		return
 	}
 
@@ -74,7 +74,7 @@ func updateEvent(c *gin.Context) {
 
 	var updatedEvent models.Event
 	if err := c.ShouldBindJSON(&updatedEvent); err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		c.JSON(http.StatusBadRequest, gin.H{"message": "Invalid input", "error": err.Error()})
 		return
 	}
 
