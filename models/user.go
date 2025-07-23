@@ -1,6 +1,9 @@
 package models
 
-import "github.com/PrinceM13/go-event-booking/db"
+import (
+	"github.com/PrinceM13/go-event-booking/db"
+	"github.com/PrinceM13/go-event-booking/utils"
+)
 
 type User struct {
 	ID       int64
@@ -19,13 +22,19 @@ func (u *User) Save() error {
 	}
 	defer stmt.Close()
 
-	res, err := stmt.Exec(u.Email, u.Password)
+	hashedPassword, err := utils.HashPassword(u.Password)
+	if err != nil {
+		return err
+	}
+
+	res, err := stmt.Exec(u.Email, hashedPassword)
 	if err != nil {
 		return err
 	}
 
 	id, err := res.LastInsertId()
 	u.ID = id
+	u.Password = ""
 
 	return err
 }

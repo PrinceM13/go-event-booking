@@ -7,6 +7,11 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+type userResponse struct {
+	ID    int64  `json:"id"`
+	Email string `json:"email"`
+}
+
 func signUp(c *gin.Context) {
 	var user models.User
 	if err := c.ShouldBindJSON(&user); err != nil {
@@ -19,5 +24,10 @@ func signUp(c *gin.Context) {
 		return
 	}
 
-	c.JSON(http.StatusCreated, gin.H{"message": "User created successfully", "user": user})
+	response := userResponse{
+		ID:    user.ID,
+		Email: user.Email,
+	}
+
+	c.JSON(http.StatusCreated, gin.H{"message": "User created successfully", "user": response})
 }
