@@ -1,5 +1,6 @@
 POST http://localhost:8080/events
 Content-Type: application/json
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3QxQGV4YW1wbGUuY29tIiwiZXhwIjoxNzUzMzg3MTcxLCJ1c2VySWQiOjF9.-Fu5qENWV4O5rOmUlMfyeC3KuPEtJpDRL1i9NawsCIc
 
 {
   "name": "Live Concert",
