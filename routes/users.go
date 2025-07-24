@@ -4,6 +4,7 @@ import (
 	"net/http"
 
 	"github.com/PrinceM13/go-event-booking/models"
+	"github.com/PrinceM13/go-event-booking/utils"
 	"github.com/gin-gonic/gin"
 )
 
@@ -45,11 +46,11 @@ func login(c *gin.Context) {
 		return
 	}
 
-	response := userResponse{
-		ID:    user.ID,
-		Email: user.Email,
+	token, err := utils.GenerateToken(user.Email, user.ID)
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"message": "Could authenticate user", "error": err.Error()})
+		return
 	}
 
-	c.JSON(http.StatusOK, gin.H{"message": "Login successful", "user": response})
-
+	c.JSON(http.StatusOK, gin.H{"message": "Login successful", "token": token})
 }
