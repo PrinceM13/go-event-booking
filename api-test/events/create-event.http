@@ -1,6 +1,6 @@
 POST http://localhost:8080/events
 Content-Type: application/json
-authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3QyQGV4YW1wbGUuY29tIiwiZXhwIjoxNzUzMzg3ODc3LCJ1c2VySWQiOjJ9.u7soCYcR1pbBwJLEMWKYDzqOxu7jPCSOgzRE6dci6yE
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3QxQGV4YW1wbGUuY29tIiwiZXhwIjoxNzUzNDUxNDcyLCJ1c2VySWQiOjF9.byTyu1Vm_3G1ZpX6ttI9MJ6_I6NLYe-fHQaZ1eOJexc
 
 {
   "name": "Concert Night",

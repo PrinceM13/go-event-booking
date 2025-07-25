@@ -5,7 +5,6 @@ import (
 	"strconv"
 
 	"github.com/PrinceM13/go-event-booking/models"
-	"github.com/PrinceM13/go-event-booking/utils"
 	"github.com/gin-gonic/gin"
 )
 
@@ -39,24 +38,13 @@ func getEvent(c *gin.Context) {
 }
 
 func createEvent(c *gin.Context) {
-	token := c.Request.Header.Get("Authorization")
-	if token == "" {
-		c.JSON(http.StatusUnauthorized, gin.H{"message": "Unauthorized access."})
-		return
-	}
-
-	userId, err := utils.VerifyToken(token)
-	if err != nil {
-		c.JSON(http.StatusUnauthorized, gin.H{"message": "Unauthorized access.", "error": err.Error()})
-		return
-	}
-
 	var event models.Event
 	if err := c.ShouldBindJSON(&event); err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"message": "Invalid input", "error": err.Error()})
 		return
 	}
 
+	userId := c.GetInt64("userId")
 	event.UserID = userId
 
 	if err := event.Save(); err != nil {

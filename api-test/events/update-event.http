@@ -1,11 +1,11 @@
-PUT http://localhost:8080/events/1
+PUT http://localhost:8080/events/7
 Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3QxQGV4YW1wbGUuY29tIiwiZXhwIjoxNzUzNDUxNDcyLCJ1c2VySWQiOjF9.byTyu1Vm_3G1ZpX6ttI9MJ6_I6NLYe-fHQaZ1eOJexc
 
 {
-  "name": "Christmas Party 2",
-    "description": "Join us for a festive celebration with more fun!",
-    "location": "219 Celebration Ave",
-    "dateTime": "2024-02-10T10:00:00Z",
-    "userId": 13
-
+  "name": "Concert Night",
+  "description": "An amazing live concert featuring top artists.",
+  "location": "219 Celebration Ave",
+  "dateTime": "2023-10-17T20:00:00Z",
+  "userId": 13
 }
