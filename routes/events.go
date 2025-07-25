@@ -62,6 +62,7 @@ func updateEvent(c *gin.Context) {
 		return
 	}
 
+	userId := c.GetInt64("userId")
 	event, err := models.GetEventByID(eventId)
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"message": "Failed to fetch event, please try again later."})
@@ -69,6 +70,11 @@ func updateEvent(c *gin.Context) {
 	}
 	if event == nil {
 		c.JSON(http.StatusNotFound, gin.H{"message": "Event not found"})
+		return
+	}
+
+	if event.UserID != userId {
+		c.JSON(http.StatusForbidden, gin.H{"message": "You do not have permission to update this event."})
 		return
 	}
 
@@ -85,7 +91,7 @@ func updateEvent(c *gin.Context) {
 		return
 	}
 
-	c.JSON(http.StatusOK, gin.H{"message": "Event updated successfully", "event": updatedEvent})
+	c.JSON(http.StatusOK, gin.H{"message": "Event updated successfully"})
 }
 
 func deleteEvent(c *gin.Context) {

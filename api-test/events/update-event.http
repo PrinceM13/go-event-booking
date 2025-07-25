@@ -1,11 +1,10 @@
-PUT http://localhost:8080/events/7
+PUT http://localhost:8080/events/2
 Content-Type: application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3QxQGV4YW1wbGUuY29tIiwiZXhwIjoxNzUzNDUxNDcyLCJ1c2VySWQiOjF9.byTyu1Vm_3G1ZpX6ttI9MJ6_I6NLYe-fHQaZ1eOJexc
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3QyQGV4YW1wbGUuY29tIiwiZXhwIjoxNzUzNDU3MDM2LCJ1c2VySWQiOjJ9.WjvCH6FKkRxOQPf83WjlysLmg9WRDCLpBfcuvzbhyyQ
 
 {
-  "name": "Concert Night",
+  "name": "Concert Night Updated 123x",
   "description": "An amazing live concert featuring top artists.",
   "location": "219 Celebration Ave",
-  "dateTime": "2023-10-17T20:00:00Z",
-  "userId": 13
+  "dateTime": "2023-10-17T20:00:00Z"
 }
