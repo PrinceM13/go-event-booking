@@ -1,9 +1,9 @@
 POST http://localhost:8080/events
 Content-Type: application/json
-authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3QxQGV4YW1wbGUuY29tIiwiZXhwIjoxNzUzMzg3MTcxLCJ1c2VySWQiOjF9.-Fu5qENWV4O5rOmUlMfyeC3KuPEtJpDRL1i9NawsCIc
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3QyQGV4YW1wbGUuY29tIiwiZXhwIjoxNzUzMzg3ODc3LCJ1c2VySWQiOjJ9.u7soCYcR1pbBwJLEMWKYDzqOxu7jPCSOgzRE6dci6yE
 
 {
-  "name": "Live Concert",
+  "name": "Concert Night",
   "description": "An amazing live concert featuring top artists.",
   "location": "23 Main St, Springfield",
   "dateTime": "2023-10-17T20:00:00Z"
